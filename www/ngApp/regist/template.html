@@ -1,0 +1,43 @@
+<div>
+    <div class="container">
+        <h1>注册:</h1>
+        <hr>
+        <form name="registform" class="col-lg-6">
+            <p>邮箱地址：</p>
+            <div>
+                <input required type="text" class="form-control"
+                       ng-model="registctrl.registform.email" name="email"
+                       ng-pattern="/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/"
+                       ng-blur="registctrl.checkemail()"
+                       ng-focus="registctrl.showemail=false">
+                <!-- 下面的这个{{registctrl.emailtipstyle}} 可以是alert-danger 或者alert-success-->
+                <p class="alert {{registctrl.emailtipstyle}} alert-small"
+                   ng-show="registctrl.showemail">
+                    {{registctrl.tip}}
+                </p>
+            </div>
+            <p>密码：</p>
+            <div>
+                <input  required type="password" class="form-control" name="password" ng-model="registctrl.registform.password" ng-blur="registctrl.getcheckstrength();registctrl.checkpassworddiff()" ng-focus="registctrl.showstrength=false">
+                <p class="alert alert-danger alert-small" ng-show="registctrl.showstrength" >
+                    密码强度不够，至少达到“强”级别
+                </p>
+                <p>
+                    <password-strength-bar strength="{{registctrl.getpasswordstrength()}}"></password-strength-bar>
+                </p>
+            </div>
+            <p>确认密码：</p>
+            <div>
+                <input  required type="password" class="form-control" name="password2" ng-model="registctrl.registform.password2" ng-blur="registctrl.checkpassworddiff()" ng-focus="registctrl.showpass=false">
+                <p class="alert alert-danger alert-small" ng-show="registctrl.showpass">
+                    二次密码输入不一致
+                </p>
+
+            </div>
+            <div class="zhuce">
+                <button class ="btn btn-success" ng-disabled="registform.$invaild || registctrl.passwordstrength<3 || registctrl.registform.password2 !=registctrl.registform.password " ng-click="registctrl.doregist()">确认注册</button>
+            </div>
+        </form>
+    </div>
+
+</div>

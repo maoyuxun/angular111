@@ -1,0 +1,52 @@
+<div>
+    <div class="container">
+        <h1>个人信息修改</h1>
+        <hr>
+        <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="{{infoctrl.idx==0 ? 'active':''}}"><a ng-click="infoctrl.getidx(0)">基本信息修改</a></li>
+                <li class="{{infoctrl.idx==1 ? 'active':''}}"><a ng-click="infoctrl.getidx(1)">密码修改</a></li>
+            </ul>
+            <div class="tab-content">
+                <div    ng-if="infoctrl.idx==0">
+                    <form name="infoform" class="col-lg-6">
+                        <p>邮箱地址：</p>
+                        <div>
+                            <input  type="text" class="form-control" disabled ng-model="infoctrl.infoform.email">
+                        </div>
+                        <p>昵称：</p>
+                        <div>
+                            <input  type="text" class="form-control" ng-model="infoctrl.infoform.nickname">
+                        </div>
+                        <p>个性签名：</p>
+                        <div>
+                            <input  type="text" class="form-control" ng-model="infoctrl.infoform.signature">
+                        </div>
+                        <p>头像：</p>
+                        <div>
+                            <img  class="touxiang" src="{{infoctrl.gettouxiang()}}">
+                            <input  type="file" nv-file-select  uploader="infoctrl.uploader" id="file">
+                        </div>
+                        <div class="xiugaiqueren">
+                            <button class="btn btn-success" ng-click="infoctrl.xiugai()">确认更改</button>
+                        </div>
+                    </form>
+                </div>
+                <div    ng-if="infoctrl.idx==1">
+                    2222
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="mask_info" ng-if="infoctrl.showimage">
+        <div class="box_info">
+            <a class="close" ng-click="infoctrl.showimage=false">x</a>
+            <cut-pic img="{{infoctrl.getimg()}}" v="infoctrl.v" maxwidth="600" maxheight="400" ></cut-pic>
+            <button class="alert alert-success jianqie" ng-click="infoctrl.cut()">确认裁切</button>
+        </div>
+
+    </div>
+</div>

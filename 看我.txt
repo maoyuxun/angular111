@@ -1,0 +1,3 @@
+后端：node mongoose formidable gm
+前端：require angular angular的插件
+组装了2个组件：密码强度组件，裁剪图片组件。

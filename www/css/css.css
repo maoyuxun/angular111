@@ -1,0 +1,109 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+header{
+	background-color: #eee;
+}
+footer{
+	background-color: #eee;
+	height:100px;
+	text-align: center;
+	line-height: 100px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+
+}
+
+
+header nav{
+	font-size: 40px;
+}
+header nav .cur{
+	background-color: orange;
+}
+.zhuce {
+	margin-top: 10px;
+}
+.nav-tabs li a {
+	cursor: pointer;
+}
+.xiugaiqueren {
+	margin-top: 20px;
+}
+.touxiang {
+	margin-bottom: 10px;
+}
+.mask_info {
+	background:rgba(0,0,0,0.7);
+	position: fixed;
+	width: 100%;
+	height:100%;
+	top:0;
+	left:0;
+}
+.box_info {
+	position: fixed;
+	background-color: white;
+	border-radius: 30px;
+	width: 1000px;
+	height:600px;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	padding: 40px;
+}
+.box_info .close {
+	font-size: 20px;
+	position: absolute;
+	top:-15px;
+	right:-20px;
+	width: 30px;
+	height:30px;
+	background-color: chocolate;
+	border-radius: 50%;
+	line-height: 30px;
+	text-align: center;
+
+}
+.jianqie {
+	position: absolute;
+	right:30px;
+	bottom: 30px;
+	width:100px;
+	height:40px;
+	text-align: center;
+	font-weight: 700;
+}
+.toptouxiang {
+	position: absolute;
+	width: 50px;
+	height:50px;
+	right: 40px;
+	border-radius: 50%;
+
+}
+.jumbotron {
+	height:180px;
+}
+.fabu {
+	width:100px;
+	height:50px;
+	margin-left: 20px;
+}
+.qvyu {
+	margin-top: 30px;
+	background-color: lightgreen;
+	box-shadow: 5px 5px 10px;
+	border-radius: 10px;
+}
+.lishi {
+	height:590px;
+}
+
+
+.qvyu .neirong {
+	font-size: 14px;
+	margin-left: 60px;
+}

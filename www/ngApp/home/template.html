@@ -1,0 +1,35 @@
+<div>
+    <div class="container-fluid">
+        <div class="row" ng-if="homectrl.checklogin()">
+          <div class="col-lg-8 col-lg-offset-2">
+              <div class="jumbotron">
+                  <h3>请发表动态</h3>
+                  <form>
+                      <input type="text" id="content" class="alert col-lg-10" placeholder="请输入内容" ng-model="homectrl.content" autofocus><button class="btn btn-success fabu" ng-click="homectrl.fabu()">发布</button>
+                  </form>
+              </div>
+          </div>
+        </div>
+        <div class="row" ng-if="!homectrl.checklogin()">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="jumbotron">
+                    <h3>请登录，才能发表</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="lishi">
+                    <div ng-repeat="item in homectrl.shuoshuo" class="qvyu col-lg-10">
+                        <img style="width: 50px;height:50px;border-radius: 50%" src="{{item.avatar}}">
+                        <span class="qianming">{{item.email}}    {{item.signature}}</span>
+                        <br/>
+                        <p class="neirong">
+                            说：{{item.content}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
